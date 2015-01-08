@@ -5,6 +5,7 @@ module Geogle
     def initialize(params = {})
       @sensor   = params[:sensor]   || false
       @language = params[:language] || "en"
+      @key = params[:key]
     end
 
     def address(address, components = {})
@@ -22,7 +23,8 @@ module Geogle
         latlng:   "#{lat},#{lng}",
         language: @language,
         result_type: result_types(result_types),
-        sensor:   @sensor
+        sensor:   @sensor,
+        key: @key
       }
       compact_hash(options)
     end

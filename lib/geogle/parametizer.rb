@@ -17,12 +17,14 @@ module Geogle
       compact_hash(options)
     end
 
-    def latlng(lat, lng)
-      {
+    def latlng(lat, lng, result_types = [])
+      options = {
         latlng:   "#{lat},#{lng}",
         language: @language,
+        result_type: result_types(result_types),
         sensor:   @sensor
       }
+      compact_hash(options)
     end
 
     def directions(origin, destination, params)
@@ -53,6 +55,10 @@ module Geogle
       components.collect do |component, value|
         "#{component}:#{value}"
       end.join('|')
+    end
+
+    def result_types(result_types)
+      result_types.join('|')
     end
   end
 end

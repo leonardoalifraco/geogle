@@ -6,14 +6,14 @@ module Geogle
       executor(:address, address, components)
     end
 
-    def latlng(lat, lng)
-      executor(:latlng, lat, lng)
+    def latlng(lat, lng, result_types = [])
+      executor(:latlng, lat, lng, result_types)
     end
 
     private
 
-    def executor(method, arg1, arg2)
-      body = request(URL::GEOCODE, @parametizer.send(method, arg1, arg2))
+    def executor(method, *args)
+      body = request(URL::GEOCODE, @parametizer.send(method, *args))
       return body["results"] if @raw
       Parser.places(body["results"])
     end

@@ -11,6 +11,7 @@ module Geogle
       @url        = url
       @client_id  = business_attrs[:client_id]
       @crypto_key = business_attrs[:crypto_key]
+      @channel    = business_attrs[:channel]
     end
 
     def build(params)
@@ -23,7 +24,9 @@ module Geogle
     private
 
     def sign(url)
-      url_to_sign = "#{url.path}?client=#{@client_id}&#{url.query}"
+      url_to_sign = "#{url.path}?client=#{@client_id}"
+      url_to_sign = "#{url_to_sign}&channel=#{@channel}" if @channel
+      url_to_sign = "#{url_to_sign}&#{url.query}"
       raw_key = url_safe_base64_decode(@crypto_key)
 
       # create a signature using the cryptographic key and the URL

@@ -61,6 +61,15 @@ describe Geogle::Geocoder do
         expect{ places }.to raise_error(Geogle::RequestDeniedError)
       end
     end
+    describe 'when server returns 5xx error' do
+      before do
+        allow(Geogle::ErrorHandler).to receive(:check) { raise Geogle::ServerError }
+      end
+
+      it "an exception is raised" do
+        expect { places }.to raise_error(Geogle::ServerError)
+      end
+    end
   end
 
   describe "when using non-valid business credentials" do
@@ -75,4 +84,5 @@ describe Geogle::Geocoder do
       expect{ places }.to raise_error(Geogle::InvalidKeyError)
     end
   end
+
 end

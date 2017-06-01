@@ -12,4 +12,6 @@ module Geogle
   require "geogle/parser"
   require "geogle/url"
   require "geogle/url_builder"
+  require 'dotenv'
+  Dotenv.load
 end

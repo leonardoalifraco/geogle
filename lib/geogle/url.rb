@@ -2,8 +2,8 @@
 
 module Geogle
   module URL
-    BASE       = "https://maps.googleapis.com"
-    GEOCODE    = "#{BASE}/maps/api/geocode/json"
-    DIRECTIONS = "#{BASE}/maps/api/directions/json"
+    BASE       = ENV["GOOGLE_API"]
+    GEOCODE    = ENV["GOOGLE_API_GEOCODE"]
+    DIRECTIONS = ENV["GOOGLE_API_DIRECTIONS"]
   end
 end

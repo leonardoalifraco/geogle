@@ -21,3 +21,5 @@ spec/fixtures/cassettes/business_geocode_by_address.yml
 spec/fixtures/cassettes/business_directions.yml
 tags
 .env
+vendor/
+.byebug_history

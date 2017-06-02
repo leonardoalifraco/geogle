@@ -16,6 +16,8 @@ module Geogle
     def request(url, params)
       uri = UrlBuilder.new(url, @settings).build(params)
       response = Net::HTTP.get_response(uri)
+      rescue Errno::ETIMEDOUT
+        raise TimeOutError
       raise InvalidKeyError if response.code == "403"
       raise TimeOutError if response.code == "408"
       raise ServerError if response.code[0] == "5" 

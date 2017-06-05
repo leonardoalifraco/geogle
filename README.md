@@ -1,5 +1,7 @@
 # Geogle
 
+[![Build Status](https://travis-ci.org/ansraliant/geogle.svg?branch=master)](https://travis-ci.org/ansraliant/geogle)
+
 Ruby wrapper for the Geocoding and Directions services provided from the Google Maps API.
 
 ## Installation

@@ -1,10 +1,9 @@
 # Geogle
 
-Ruby wrapper for the Geocoding and Directions services provided from the Google Maps API.
+[![Build Status](https://travis-ci.org/ansraliant/geogle.svg?branch=master)](https://travis-ci.org/ansraliant/geogle)
+[![Code Climate](https://codeclimate.com/github/ansraliant/geogle.png)](https://codeclimate.com/github/ansraliant/geogle)
 
-[![wercker status](https://app.wercker.com/status/6122e4f0966ee255949e2eb465aefd10/m "wercker status")](https://app.wercker.com/project/bykey/6122e4f0966ee255949e2eb465aefd10)
-[![Gem Version](https://badge.fury.io/rb/geogle.svg)](http://badge.fury.io/rb/geogle)
-[![Code Climate](https://codeclimate.com/github/yonelacort/geogle/badges/gpa.svg)](https://codeclimate.com/github/yonelacort/geogle)
+Ruby wrapper for the Geocoding and Directions services provided from the Google Maps API.
 
 ## Installation
 

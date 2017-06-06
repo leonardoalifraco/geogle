@@ -10,6 +10,8 @@ module Geogle
         raise BadRequestError
       when 'OVER_QUERY_LIMIT'
         raise OverQueryError
+      when 'UNKNOWN_ERROR'
+        raise UnknownError
       end
     end
   end

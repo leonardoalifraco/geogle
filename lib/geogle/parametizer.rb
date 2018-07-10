@@ -13,7 +13,8 @@ module Geogle
         address:    address,
         language:   @language,
         components: components(components),
-        sensor:     @sensor
+        sensor:     @sensor,
+        key: @key
       }
       compact_hash(options)
     end
